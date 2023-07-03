@@ -1,0 +1,27 @@
+{
+	"name": "samp-fake-query",
+	"version": "1.0.0",
+	"description": "SA:MP Fake Query",
+	"main": "dist",
+	"types": "./dist/index.d.ts",
+	"scripts": {},
+	"keywords": [
+		"query",
+		"samp",
+		"samp-query",
+		"samp-fake-query"
+	],
+	"author": "ghosty2004",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^20.3.3",
+		"typescript": "^5.1.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ghosty2004/samp-fake-query.git"
+	},
+	"files": [
+		"dist"
+	]
+}
