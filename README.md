@@ -24,4 +24,15 @@ server.rules.addRule("owner", "ghosty2004");
 
 // Add players
 server.players.addPlayer(0, "ghosty2004", 1, 1);
+
+// Listen for events
+server.on("listening", (ip, port) => {
+	console.log(`SA:MP fake query listening on ${ip}:${port}`);
+});
+
+server.on("requestData", (clientIp, clientPort, opcode) => {
+	console.log(
+		`Received request from ${clientIp}:${clientPort} for opcode ${opcode}`
+	);
+});
 ```
