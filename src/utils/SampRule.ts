@@ -37,14 +37,14 @@ export default class SampRules {
 		offset += 2;
 
 		this.rules.forEach(({ name, value }) => {
-			buffer.writeUInt8(name.length, offset);
+			buffer.writeUInt16LE(name.length, offset);
 			++offset;
 			for (let i = offset; i < offset + name.length; i++) {
 				buffer[i] = name.charCodeAt(i - offset);
 			}
 			offset += name.length;
 
-			buffer.writeUInt8(value.length, offset);
+			buffer.writeUInt16LE(value.length, offset);
 			++offset;
 			for (let i = offset; i < offset + value.length; i++) {
 				buffer[i] = value.charCodeAt(i - offset);

@@ -54,10 +54,10 @@ export default class SampPlayer {
 		switch (type) {
 			case "all":
 				this.players.forEach((player) => {
-					buffer.writeUInt8(player.id, offset);
+					buffer.writeUInt16LE(player.id, offset);
 					++offset;
 
-					buffer.writeUInt8(player.name.length, offset);
+					buffer.writeUInt16LE(player.name.length, offset);
 					++offset;
 					for (let i = offset; i < offset + player.name.length; i++) {
 						buffer[i] = player.name.charCodeAt(i - offset);
@@ -67,13 +67,13 @@ export default class SampPlayer {
 					buffer.writeUInt16LE(player.score, offset);
 					offset += 4;
 
-					buffer.writeUInt8(player.ping, offset);
+					buffer.writeUInt16LE(player.ping, offset);
 					offset += 4;
 				});
 				break;
 			case "partial":
 				this.players.forEach((player) => {
-					buffer.writeUInt8(player.name.length, offset);
+					buffer.writeUInt16LE(player.name.length, offset);
 					++offset;
 					for (let i = offset; i < offset + player.name.length; i++) {
 						buffer[i] = player.name.charCodeAt(i - offset);

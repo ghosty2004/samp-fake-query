@@ -43,7 +43,7 @@ export default class SampConfig {
 		let offset = 11;
 
 		// passworded
-		buffer.writeUInt8(Number(this.passworded), offset);
+		buffer.writeUInt16LE(Number(this.passworded), offset);
 		offset += 1;
 
 		// players
